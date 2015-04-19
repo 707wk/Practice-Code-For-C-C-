@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google 地图 JavaScript API 示例: 地图标记</title>
+    <script src="http://ditu.google.cn/maps?file=api&v=2&key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA&hl=zh-CN"
+            type="text/javascript"></script>
+    <script type="text/javascript">    
+    function initialize() 
+    {
+        if( GBrowserIsCompatible() )//如果浏览器支持google地图 
+        {
+            map = new GMap2(document.getElementById("map_canvas"));//定义一个地图变量，不加关键字var，表明是一个全局变量
+               map.setCenter(new GLatLng(22.536, 113.956), 14);//设置初始中心，缩放级别
+            //map.openInfoWindow(map.getCenter(),document.createTextNode("Hello, world"));//显示一个气泡信息
+             map.addControl(new GLargeMapControl());//增加大的缩放条
+           map.enableContinuousZoom();
+			map.addControl(new GScaleControl(true));
+             map.addControl(new GSmallMapControl());//增加小的缩放条
+            map.addControl(new GMapTypeControl(true));//增加地图类型切换按钮
+            
+            map.addControl(new GSmallZoomControl());
+            
+            var point = new GLatLng(22.536, 113.956); //生成一个坐标点
+            map.addOverlay(new GMarker(point)); //增加一个地图标记
+           // GEvent.addListener(map, "click", function() {alert("click map");});//注册单击事件的监听器，设置响应函数
+        }
+    }    
+    </script>
+
+    <script type="text/javascript">
+    function TansTo(lat, lng,level)//转到指定位置，有三个参数，纬度、经度缩放级别 
+    {
+    	//alert(level);//测试参数是否传递过来
+    	var level_01=parseInt(level,10);//类型转换，没有转换会出错 
+         map.setCenter(new GLatLng(lat, lng), level_01);//设置初始中心，缩放级别
+         //map.setZoom(level_01);// 单独设置缩放级别函数 
+    }
+    </script>
+    
+     <script type="text/javascript">
+    function Set_Zoom(level)//改变缩放级别 
+    {
+       // alert(level);//测试参数是否传递过来
+        var level_01=parseInt(level,10);//类型转换，没有转换会出错
+      //  map.panTo(new GLatLng(lat, lng));
+         //map.setCenter(new GLatLng(lat, lng), level);//设置初始中心，缩放级别
+         map.setZoom(level_01);
+    }
+    </script>
+    
+  </head>
+  <body  onload="initialize()" onunload="GUnload()"> <!--//页面加载完成后执行initialize()函数-->
+    <div id="map_canvas" style="width: 500px; height: 365px"></div><!--定义名为map_canvas的DIV-->
+  </body>
+</html>
