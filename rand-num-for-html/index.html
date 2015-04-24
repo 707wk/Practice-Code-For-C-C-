@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>rand num</title>
+<style type="text/css">
+<!--
+.STYLE2 {font-size: xx-large}
+-->
+</style>
+</head>
+
+<body>
+<table width="60" height="40" border="0" class="STYLE2">
+  <tr>
+    <td>
+      <form action="" method="post" name="form2" id="form2">
+        
+        <label>
+	  学号:
+        <input name="textarea" type="text" class="STYLE2" id="text1" value="" />
+        </label>
+    </form>    </td>
+  </tr>
+  <tr>
+    <td><form action="" method="post" name="form3" id="form3">
+      
+      <label></label>
+      <label>
+	  姓名:
+      <input name="textarea2" type="text" class="STYLE2" id="text2" value="" />
+      </label>
+    </form>    </td>
+  </tr>
+  <tr>
+    <td class="STYLE2"><form action="" method="post" name="form1" id="form1">
+      <label>
+	  <center>
+      <input name="Submit" type="button" class="STYLE2" onclick="initialize()" value="抽签" />
+	  </center>
+        </label>
+    </form>    </td>
+  </tr>
+</table>
+</body>
+</html>
+
+<script type="text/javascript">
+	function initialize(){
+		var classdata=new Array("李晓晨",
+								"康祖吉",
+								"欧阳波",
+								"张海平",
+								"陈广云",
+								"冯娇",
+								"陈喜风",
+								"费翔",
+								"张菽芳",
+								"傅仙豪",
+								"胡伟伟",
+								"蒋端阳",
+								"石法玲",
+								"钟思静",
+								"袁志鹏",
+								"黄子豪",
+								"曾美星",
+								"黄鑫",
+								"杨明亮",
+								"车骋",
+								"唐姣玉",
+								"唐波",
+								"付海清",
+								"张铭枫",
+								"邓福韬",
+								"罗亮",
+								"刘鑫",
+								"易志明",
+								"肖俊男",
+								"龙祎",
+								"汪恳",
+								"黄赳",
+								"李志文",
+								"熊湘君",
+								"罗鑫",
+								"朱玉萍",
+								"罗娟",
+								"唐志伟",
+								"王莎",
+								"李靖",
+								"汤杰",
+								"黄麟",
+								"黄足");
+		var num=Math.floor(Math.random()*43);
+		var textBox=document.getElementById("text1");
+		textBox.value=201430185001+num;
+		textBox=document.getElementById("text2");
+		textBox.value=classdata[num];
+	}
+</script>
