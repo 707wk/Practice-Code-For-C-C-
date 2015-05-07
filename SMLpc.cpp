@@ -47,6 +47,14 @@ int main()
 	int order[2][100];
 	
 	char temp[4];
+
+	cout << "*** Welcome to Simpletron! ***" << endl;  
+    cout << "*** Please enter your program one instruction ***" << endl;  
+    cout << "*** (or data word) at a time. I will type the ***" << endl;  
+    cout << "*** location number and a question mark (?).  ***" << endl;  
+    cout << "*** You then type the word for that location. ***" << endl;  
+    cout << "*** Type the sentinel -99999 to stop entering ***" << endl;  
+    cout << "*** your program. ***" << endl << endl; 
 	
 	for(len=0;;len++)
 	{
@@ -71,6 +79,10 @@ int main()
 			break;
 		}
 	}
+	
+	cout << "*** Program loading completed ***" << endl;  
+    cout << "*** Program execution begins  ***" << endl;  
+	
 	/*
 	for(int i=0;i<len;i++)
 	{
@@ -133,6 +145,8 @@ int main()
 		}
 	}
 	_END:
+	
+	cout << "*** Program execution completed  ***" << endl;
 	
 	return 0;
 }
