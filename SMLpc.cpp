@@ -40,6 +40,19 @@
 
 using namespace std;
 
+#define READ        10 // 将数据读入到内存某个位置read  
+#define WRITE       11 // 将数据从内存写出屏幕write  
+#define LOAD		20 // 从内存加载到累加器load
+#define STORE		21 // 将累加器内容存储到指定内存store
+#define ADD			30 // 累加器中的值加上指定内存的值addition
+#define SUBTRACT	31 // 累加器中的值减去指定内存的值subtract
+#define DIVIDE		32 // 累加器中值除以指定内存的值division
+#define MULTIPLY	33 // 累加器中的值乘以指定位置的值multiplication
+#define BRANCH		40 // 转移到特定内存位置
+#define BRANCHNEG	41 // 如果累加器为负，转移到内存指定位置
+#define BRANCHZERO 	42 // 如果累加器为零，转移到内存指定位置
+#define HALT		43 // 停止程序，完成任务
+
 int main()
 {
 	int len;
@@ -59,7 +72,10 @@ int main()
 		printf("%2d ? ",len);
 		cin>>memory[len];
 		if(memory[len]==-99999)
+		{
+			memory[len--]=0;
 			break;
+		}
 	}
 
 	cout << "*** Program loading completed ***" << endl;  
@@ -72,57 +88,58 @@ int main()
 	}
 	cout<<len<<endl;
 	*/
+	
 	for(int i=0;i<len;i++)
 	{
 		switch(memory[i]/100)
 		{
-			case 10:
+			case READ:
 			cout<<" ? ";
 			cin>>memory[memory[i]%100];
 			break;
-			case 11:
+			case WRITE:
 			cout<<" # "<<memory[memory[i]%100]<<endl;
 			break;
 			
-			case 20:
+			case LOAD:
 			acc=memory[memory[i]%100];
 			break;
-			case 21:
+			case STORE:
 			memory[memory[i]%100]=acc;
 			break;
 			
-			case 30:
+			case ADD:
 			acc+=memory[memory[i]%100];
 			break;
-			case 31:
+			case SUBTRACT:
 			acc-=memory[memory[i]%100];
 			break;
-			case 32:
+			case DIVIDE:
 			acc/=memory[memory[i]%100];
 			break;
-			case 33:
+			case MULTIPLY:
 			acc*=memory[memory[i]%100];
 			break;
 			
-			case 40:
+			case BRANCH:
 			i=memory[i]%100;
 			i--;
 			break;
-			case 41:
+			case BRANCHNEG:
 			if(acc<0)
 			{
 				i=memory[i]%100;
 				i--;
 			}
 			break;
-			case 42:
+			case BRANCHZERO:
 			if(acc==0)
 			{
 				i=memory[i]%100;
 				i--;
 			}
 			break;
-			case 43:
+			case HALT:
 			goto _END;
 			break;
 		}
