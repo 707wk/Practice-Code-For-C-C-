@@ -7,35 +7,6 @@
  *EMAIL   :gtsoft_wk@foxmail.com
 ***************************************/
 
-/*
-//输入两个数输出最大数
-+1009
-+1010
-+2009
-+3110
-+4107
-+1109
-+4300
-+1110
-+4300
-+0000
-+0000
--99999
-
-//输入两个数输出和
-+1007
-+1008
-+2007
-+3008
-+2109
-+1109
-+4300
-+0000
-+0000
-+0000
--99999
-*/
-
 #include <iostream>
 
 using namespace std;
@@ -80,14 +51,6 @@ int main()
 
 	cout << "*** Program loading completed ***" << endl;  
     cout << "*** Program execution begins  ***" << endl;  
-	
-	/*
-	for(int i=0;i<len;i++)
-	{
-		cout<<memory[i]/100<<" "<<memory[i]%100<<endl;
-	}
-	cout<<len<<endl;
-	*/
 	
 	for(int i=0;i<len;i++)
 	{
