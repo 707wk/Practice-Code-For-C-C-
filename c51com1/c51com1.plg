@@ -1,0 +1,29 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: c51com1 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP106E.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/c51com1.pdb" /debug /machine:I386 /out:"Debug/c51com1.exe" /pdbtype:sept 
+.\Debug\c51com1.obj
+.\Debug\c51com1Dlg.obj
+.\Debug\mscomm.obj
+.\Debug\OScopeCtrl.obj
+.\Debug\StdAfx.obj
+.\Debug\c51com1.res
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP106E.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+c51com1.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
