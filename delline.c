@@ -38,8 +38,6 @@
 
 //最大文件数 
 #define MAX_RESULT	100000
-//最大文件名长度 
-#define MAXSTRLEN 1000
 
 char result[MAX_RESULT][MAX_PATH];
 
@@ -77,7 +75,11 @@ void deletefiles(char* filesname,char* path)
 	for(;fgetc(fpin)!='\n';);
 	for(;fgetc(fpin)!='\n';);
 	
-	for(;(ch=fgetc(fpin))!=EOF;fputc(ch,fpout));
+	for(;(ch=fgetc(fpin))!=EOF;)
+	{
+		if(ch==NULL)ch=' ';
+		fputc(ch,fpout);
+	}
 		
 	fclose(fpin);
 	fclose(fpout);
@@ -149,7 +151,7 @@ int main(int argc,char* argv[])
 		deletefiles(result[i],argv[1]);
 		printf("已处理%4d个文件\r",i+1);
 	}
-	printf("\n处理完成\n按确认件退出本程序");
+	printf("\n处理完成\n按确认键退出本程序");
 	
 	getchar();
 	return 0 ;
